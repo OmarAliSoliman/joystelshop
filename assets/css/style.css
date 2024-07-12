@@ -459,7 +459,7 @@ body.modal-open .mm-slideout {
   line-height: 30px;
   margin-top: 17px;
 }
-.about_joystel .about_joystel_content a {
+.about_joystel a {
   background-color: #5d35ee;
   border-radius: 7px;
   color: #fff;
@@ -471,8 +471,11 @@ body.modal-open .mm-slideout {
   width: -moz-fit-content;
   width: fit-content;
 }
-.about_joystel .about_joystel_content a i {
+.about_joystel a i {
   margin-left: 10px;
+}
+.about_joystel .mobile_btn {
+  display: none;
 }
 .about_joystel .about_joystel_gif {
   background-color: #e6e6e6;
@@ -488,6 +491,20 @@ body.modal-open .mm-slideout {
 .shopping_section .shopping_section_img img {
   width: 85%;
   margin: auto;
+}
+.shopping_section .mobile_head {
+  display: none;
+  text-align: center;
+}
+.shopping_section .mobile_head h6 {
+  color: #5d35ee;
+  font-family: graphikMedium;
+  font-size: 0.9rem;
+}
+.shopping_section .mobile_head h5 {
+  color: #170d39;
+  font-family: graphikSemiBold;
+  font-size: 1.8rem;
 }
 .shopping_section .shopping_section_content h6 {
   color: #5d35ee;
@@ -548,7 +565,7 @@ body.modal-open .mm-slideout {
   font-family: graphikMedium;
   font-size: 0.9rem;
 }
-.eshtryly_service .eshtryly_service_content a {
+.eshtryly_service a {
   background-color: #5d35ee;
   border-radius: 7px;
   color: #fff;
@@ -560,8 +577,11 @@ body.modal-open .mm-slideout {
   width: -moz-fit-content;
   width: fit-content;
 }
-.eshtryly_service .eshtryly_service_content a i {
+.eshtryly_service a i {
   margin-left: 10px;
+}
+.eshtryly_service .mobile_btn {
+  display: none;
 }
 
 .sites_buy {
@@ -690,6 +710,127 @@ body.modal-open .mm-slideout {
   margin-left: 10px;
 }
 
+@media (max-width: 1100px) {
+  .shopping_cart {
+    padding: 14px 14px;
+  }
+  .shopping_section .shopping_section_img img {
+    width: 95%;
+  }
+  .site-card .card-link {
+    padding: 8px 30px;
+    font-size: 0.9rem;
+  }
+  .custom_header .header_box_wrapper {
+    width: 65%;
+  }
+}
+@media (max-width: 991px) {
+  .custom_header .header_box_wrapper::after, .custom_header .header_box_wrapper::before {
+    display: none;
+  }
+  .custom_header .header_box_wrapper {
+    width: 100%;
+  }
+  .about_joystel .about_joystel_content {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .about_joystel .about_joystel_content p, .about_joystel .about_joystel_content h5, .about_joystel .about_joystel_content h6 {
+    text-align: center;
+  }
+  .about_joystel .mobile_btn {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .about_joystel .desktop_btn {
+    display: none;
+  }
+  .shopping_section .shopping_section_content {
+    margin-top: 50px;
+  }
+  .shopping_section .mobile_head {
+    display: block;
+  }
+  .shopping_section .desktop_head {
+    display: none;
+  }
+  .eshtryly_service .mobile_btn {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .eshtryly_service .desktop_btn {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 14px;
+  }
+  .sites_buy ul {
+    flex-wrap: wrap;
+    padding-right: 0;
+  }
+  .site-card {
+    width: 350px;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .site_footer {
+    padding: 40px 0 40px 0;
+  }
+  .custom_navbar .chat_whatsapp a {
+    padding: 14px 11px;
+  }
+  .custom_navbar .chat_whatsapp a span {
+    font-size: 0.9rem;
+  }
+  .site_footer .chat_whatsapp a {
+    padding: 14px 11px;
+  }
+  .site_footer .chat_whatsapp a span {
+    font-size: 0.9rem;
+  }
+  .custom_navbar_header .header_elm {
+    height: 31%;
+    width: 100%;
+    transform: scale(2);
+    left: 0;
+    top: 260px;
+  }
+  .custom_header {
+    height: -moz-max-content !important;
+    height: max-content !important;
+    min-height: 100vh !important;
+  }
+  .custom_header .header_box {
+    padding: 30px 18px;
+    margin-top: 100px;
+  }
+  .custom_header .header_box .form-group {
+    margin-bottom: 25px;
+  }
+  .custom_header .header_box .btn_submit button {
+    margin-top: 5px;
+  }
+  .about_joystel {
+    margin-top: 0;
+  }
+  .custom_header .header_content {
+    margin-top: 80px;
+  }
+  .custom_navbar_header {
+    height: auto;
+    padding-bottom: 50px;
+    background-color: #170d39;
+  }
+  .sites_buy .card_icon {
+    margin: 5px;
+  }
+}
 /* ================================================================ */
 /* ================================================================ */
 /* ================================================================ */
