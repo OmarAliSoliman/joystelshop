@@ -374,9 +374,10 @@ body.modal-open .mm-slideout {
     }
   }
   .header_box_wrapper {
-    width: 45%;
+    width: 55%;
     margin: auto;
     position: relative;
+    margin-top: 76px;
     &::after {
       content: url("../images/3D\ 1.svg");
       position: absolute;
@@ -399,7 +400,6 @@ body.modal-open .mm-slideout {
     padding: 44px 61px;
     border-radius: 15px;
     margin: auto;
-    margin-top: 76px;
     width: 100%;
     margin: auto;
     position: relative;
@@ -428,6 +428,7 @@ body.modal-open .mm-slideout {
         .form-control {
           color: #000;
           background-color: #fff;
+          border: 1px solid #dae0e4;
           &::placeholder {
             color: #000;
             font-family: $mediumdFont;
@@ -462,6 +463,89 @@ body.modal-open .mm-slideout {
         margin: auto;
         margin-top: 26px;
       }
+    }
+
+    .custom-select {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .custom-select-trigger {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // width: 200px;
+      height: 55px;
+      border: 1px solid #dae0e4;
+      // padding: 10px;
+      padding: 0 15px;
+      background-color: #fff;
+      border-radius: 7px;
+    }
+
+    .custom-select-trigger span {
+      color: #000;
+      font-family: $lightFont;
+    }
+
+    .custom-select-trigger .arrow {
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #333;
+    }
+
+    .custom-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: none;
+      z-index: 99;
+    }
+
+    .custom-options.show {
+      display: block;
+    }
+
+    .custom-option {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .custom-option:hover {
+      background-color: #f0f0f0;
+    }
+
+    .custom-option img {
+      width: 20px;
+      height: 14px;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+
+    .custom-select-trigger img.selected-flag {
+      width: 20px;
+      height: 14px;
+      margin-right: 10px;
+      display: none;
+      /* Hide the flag initially */
+    }
+
+    .custom-select-trigger span img {
+      margin-right: 0 !important;
+    }
+    input {
+      text-align: right;
     }
   }
 }
@@ -506,7 +590,7 @@ body.modal-open .mm-slideout {
       margin-left: 10px;
     }
   }
-  .mobile_btn{
+  .mobile_btn {
     display: none;
   }
   .about_joystel_gif {
@@ -526,7 +610,7 @@ body.modal-open .mm-slideout {
       margin: auto;
     }
   }
-  .mobile_head{
+  .mobile_head {
     display: none;
     text-align: center;
     h6 {
@@ -552,8 +636,6 @@ body.modal-open .mm-slideout {
       font-size: 1.8rem;
     }
   }
-
-    
 
   .head {
     margin-bottom: 55px;
@@ -620,7 +702,7 @@ body.modal-open .mm-slideout {
       margin-left: 10px;
     }
   }
-  .mobile_btn{
+  .mobile_btn {
     display: none;
   }
 }
@@ -652,7 +734,7 @@ body.modal-open .mm-slideout {
     align-items: center;
     justify-content: center;
     margin: 0 6px;
-    img{
+    img {
       width: 80%;
     }
   }
@@ -706,7 +788,7 @@ body.modal-open .mm-slideout {
   }
   .card-text {
     font-size: 0.9rem;
-    color: #2F2D34;
+    color: #2f2d34;
     line-height: 25px;
     width: 90%;
     margin-top: 11px;
@@ -736,7 +818,7 @@ body.modal-open .mm-slideout {
   }
 }
 
-.site_footer{
+.site_footer {
   padding: 100px 0 90px 0;
   background-color: $mainColor;
   margin-top: 100px;
@@ -754,81 +836,194 @@ body.modal-open .mm-slideout {
   }
 }
 
+.modal_result {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  .head {
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+  }
+  .modal_box {
+    background-color: #fff;
+    padding: 29px 31px;
+    text-align: center;
+    width: 358px;
+    max-width: 95%;
+    margin: auto;
+    border-radius: 10px;
+    position: relative;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    .close {
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      cursor: pointer;
+    }
+    .flag {
+      img {
+        width: 20px;
+        flex: none;
+      }
+      span {
+        color: $secondColor;
+        font-size: 0.9rem;
+      }
+    }
+    .line {
+      margin: 0 10px;
+    }
+    .unit_weight {
+      display: flex;
+      margin-top: 20px;
+      height: 34px;
+      padding: 9px 15px;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 4px;
+      background: #f0eff4;
+      span {
+        font-size: 0.9rem;
+      }
+    }
+    .total {
+      p {
+        color: $mainColor;
+        text-align: center;
+        font-size: 0.8rem;
+        display: inline-block;
+        margin-top: 15px;
+        margin-bottom: 10px;
+      }
+      h5 {
+        font-size: 1.9rem;
+        span {
+          color: $secondColor;
+        }
+        .currency{
+          color: #000;
+        }
+      }
+    }
+    a {
+      background-color: $secondColor;
+      border-radius: 7px;
+      color: #fff;
+      padding: 15px;
+      margin: auto;
+      margin-top: 15px;
+      display: inline-block;
+      display: flex;
+      align-items: center;
+      width: fit-content;
+      i {
+        margin-left: 10px;
+      }
+    }
+  }
+}
 
-@media(max-width: 1100px){
+.active_modal{
+  opacity: 1;
+  visibility: visible;
+  .modal_box{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1100px) {
   .shopping_cart {
     padding: 14px 14px;
   }
-  .shopping_section .shopping_section_img img{
+  .shopping_section .shopping_section_img img {
     width: 95%;
   }
   .site-card .card-link {
     padding: 8px 30px;
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
-  .custom_header .header_box_wrapper{
+  .custom_header .header_box_wrapper {
     width: 65%;
   }
 }
 
-@media(max-width: 991px){
-  .custom_header .header_box_wrapper::after, .custom_header .header_box_wrapper::before{
+@media (max-width: 991px) {
+  .custom_header .header_box_wrapper::after,
+  .custom_header .header_box_wrapper::before {
     display: none;
   }
-  .custom_header .header_box_wrapper{
+  .custom_header .header_box_wrapper {
     width: 100%;
   }
-  .about_joystel .about_joystel_content{
+  .about_joystel .about_joystel_content {
     margin-bottom: 30px;
     text-align: center;
-    p, h5, h6{
+    p,
+    h5,
+    h6 {
       text-align: center;
     }
   }
-  .about_joystel{
-    .mobile_btn{
+  .about_joystel {
+    .mobile_btn {
       display: block;
       margin: auto;
       margin-top: 30px;
     }
-    .desktop_btn{
-      display: none;
-    }
-  } 
-  .shopping_section {
-    .shopping_section_content{
-      margin-top: 50px;
-    }
-    .mobile_head{
-      display: block;
-    }
-    .desktop_head{
+    .desktop_btn {
       display: none;
     }
   }
-  .eshtryly_service{
-    .mobile_btn{
+  .shopping_section {
+    .shopping_section_content {
+      margin-top: 50px;
+    }
+    .mobile_head {
+      display: block;
+    }
+    .desktop_head {
+      display: none;
+    }
+  }
+  .eshtryly_service {
+    .mobile_btn {
       display: block;
       margin: auto;
       margin-top: 30px;
     }
-    .desktop_btn{
+    .desktop_btn {
       display: none;
     }
   }
 }
 
-@media(max-width: 600px){
-  html{
+@media (max-width: 600px) {
+  html {
     font-size: 14px;
   }
   .sites_buy {
-    ul{
+    ul {
       flex-wrap: wrap;
       padding-right: 0;
     }
   }
-  .site-card{
+  .site-card {
     width: 350px;
     max-width: 100%;
     margin-right: auto;
@@ -837,16 +1032,16 @@ body.modal-open .mm-slideout {
   .site_footer {
     padding: 40px 0 40px 0;
   }
-  .custom_navbar .chat_whatsapp a{
+  .custom_navbar .chat_whatsapp a {
     padding: 14px 11px;
-    span{
-      font-size: .9rem;
+    span {
+      font-size: 0.9rem;
     }
   }
-  .site_footer .chat_whatsapp a{
+  .site_footer .chat_whatsapp a {
     padding: 14px 11px;
-    span{
-      font-size: .9rem;
+    span {
+      font-size: 0.9rem;
     }
   }
   .custom_navbar_header .header_elm {
@@ -856,33 +1051,36 @@ body.modal-open .mm-slideout {
     left: 0;
     top: 260px;
   }
-  .custom_header{
+  .custom_header {
     height: max-content !important;
     min-height: 100vh !important;
   }
-  .custom_header .header_box{
+  .custom_header .header_box {
     padding: 30px 18px;
     margin-top: 100px;
   }
-  .custom_header .header_box .form-group{
+  .custom_header .header_box .form-group {
     margin-bottom: 25px;
   }
-  .custom_header .header_box .btn_submit button{
+  .custom_header .header_box .btn_submit button {
     margin-top: 5px;
   }
-  .about_joystel{
+  .about_joystel {
     margin-top: 0;
   }
-  .custom_header .header_content{
+  .custom_header .header_content {
     margin-top: 80px;
   }
-  .custom_navbar_header{
+  .custom_navbar_header {
     height: auto;
     padding-bottom: 50px;
     background-color: $mainColor;
   }
-  .sites_buy .card_icon{
+  .sites_buy .card_icon {
     margin: 5px;
+  }
+  .modal_result .modal_box {
+    padding: 29px 9px;
   }
 }
 

@@ -335,9 +335,10 @@ body.modal-open .mm-slideout {
   font-weight: 400;
 }
 .custom_header .header_box_wrapper {
-  width: 45%;
+  width: 55%;
   margin: auto;
   position: relative;
+  margin-top: 76px;
 }
 .custom_header .header_box_wrapper::after {
   content: url("../images/3D 1.svg");
@@ -360,7 +361,6 @@ body.modal-open .mm-slideout {
   padding: 44px 61px;
   border-radius: 15px;
   margin: auto;
-  margin-top: 76px;
   width: 100%;
   margin: auto;
   position: relative;
@@ -392,6 +392,7 @@ body.modal-open .mm-slideout {
 .custom_header .header_box .form-group .form-control .form-control {
   color: #000;
   background-color: #fff;
+  border: 1px solid #dae0e4;
 }
 .custom_header .header_box .form-group .form-control .form-control::-moz-placeholder {
   color: #000;
@@ -430,6 +431,76 @@ body.modal-open .mm-slideout {
   align-items: center;
   margin: auto;
   margin-top: 26px;
+}
+.custom_header .header_box .custom-select {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.custom_header .header_box .custom-select-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 55px;
+  border: 1px solid #dae0e4;
+  padding: 0 15px;
+  background-color: #fff;
+  border-radius: 7px;
+}
+.custom_header .header_box .custom-select-trigger span {
+  color: #000;
+  font-family: graphikLightn;
+}
+.custom_header .header_box .custom-select-trigger .arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #333;
+}
+.custom_header .header_box .custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 99;
+}
+.custom_header .header_box .custom-options.show {
+  display: block;
+}
+.custom_header .header_box .custom-option {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+.custom_header .header_box .custom-option:hover {
+  background-color: #f0f0f0;
+}
+.custom_header .header_box .custom-option img {
+  width: 20px;
+  height: 14px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.custom_header .header_box .custom-select-trigger img.selected-flag {
+  width: 20px;
+  height: 14px;
+  margin-right: 10px;
+  display: none;
+  /* Hide the flag initially */
+}
+.custom_header .header_box .custom-select-trigger span img {
+  margin-right: 0 !important;
+}
+.custom_header .header_box input {
+  text-align: right;
 }
 
 .about_joystel {
@@ -663,7 +734,7 @@ body.modal-open .mm-slideout {
 }
 .site-card .card-text {
   font-size: 0.9rem;
-  color: #2F2D34;
+  color: #2f2d34;
   line-height: 25px;
   width: 90%;
   margin-top: 11px;
@@ -710,6 +781,114 @@ body.modal-open .mm-slideout {
   margin-left: 10px;
 }
 
+.modal_result {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.modal_result .head {
+  margin-bottom: 25px;
+  font-size: 0.9rem;
+}
+.modal_result .modal_box {
+  background-color: #fff;
+  padding: 29px 31px;
+  text-align: center;
+  width: 358px;
+  max-width: 95%;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.modal_result .modal_box .close {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  cursor: pointer;
+}
+.modal_result .modal_box .flag img {
+  width: 20px;
+  flex: none;
+}
+.modal_result .modal_box .flag span {
+  color: #5d35ee;
+  font-size: 0.9rem;
+}
+.modal_result .modal_box .line {
+  margin: 0 10px;
+}
+.modal_result .modal_box .unit_weight {
+  display: flex;
+  margin-top: 20px;
+  height: 34px;
+  padding: 9px 15px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  background: #f0eff4;
+}
+.modal_result .modal_box .unit_weight span {
+  font-size: 0.9rem;
+}
+.modal_result .modal_box .total p {
+  color: #170d39;
+  text-align: center;
+  font-size: 0.8rem;
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+.modal_result .modal_box .total h5 {
+  font-size: 1.9rem;
+}
+.modal_result .modal_box .total h5 span {
+  color: #5d35ee;
+}
+.modal_result .modal_box .total h5 .currency {
+  color: #000;
+}
+.modal_result .modal_box a {
+  background-color: #5d35ee;
+  border-radius: 7px;
+  color: #fff;
+  padding: 15px;
+  margin: auto;
+  margin-top: 15px;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.modal_result .modal_box a i {
+  margin-left: 10px;
+}
+
+.active_modal {
+  opacity: 1;
+  visibility: visible;
+}
+.active_modal .modal_box {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
 @media (max-width: 1100px) {
   .shopping_cart {
     padding: 14px 14px;
@@ -726,7 +905,8 @@ body.modal-open .mm-slideout {
   }
 }
 @media (max-width: 991px) {
-  .custom_header .header_box_wrapper::after, .custom_header .header_box_wrapper::before {
+  .custom_header .header_box_wrapper::after,
+  .custom_header .header_box_wrapper::before {
     display: none;
   }
   .custom_header .header_box_wrapper {
@@ -736,7 +916,9 @@ body.modal-open .mm-slideout {
     margin-bottom: 30px;
     text-align: center;
   }
-  .about_joystel .about_joystel_content p, .about_joystel .about_joystel_content h5, .about_joystel .about_joystel_content h6 {
+  .about_joystel .about_joystel_content p,
+  .about_joystel .about_joystel_content h5,
+  .about_joystel .about_joystel_content h6 {
     text-align: center;
   }
   .about_joystel .mobile_btn {
@@ -829,6 +1011,9 @@ body.modal-open .mm-slideout {
   }
   .sites_buy .card_icon {
     margin: 5px;
+  }
+  .modal_result .modal_box {
+    padding: 29px 9px;
   }
 }
 /* ================================================================ */

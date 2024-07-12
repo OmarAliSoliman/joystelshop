@@ -53,7 +53,7 @@
           </div>
           <div class="col-8 col-md-6 col-lg-6">
             <div class="chat_whatsapp">
-              <a href="">
+              <a href="https://wa.me/+1(555) 600-3899" target="_blank">
                 <i class="fab fa-whatsapp"></i>
                 <span>اشحن الان عبر الواتساب</span>
               </a>
@@ -79,22 +79,37 @@
         <div class="header_box_wrapper">
           <div class="header_box">
             <h5>حساب سعر الشحن</h5>
-            <form action="">
+            <form action="" id="countrySubmit">
               <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-8">
                   <div class="form-group">
                     <label for="">أود الشحن من تركيا إلى</label>
-                    <select name="" id="" class="form-control">
-                      <option value=""></option>
-                    </select>
+                    <div class="custom-select-wrapper">
+                      <div class="custom-select">
+                        <div class="custom-select-trigger">
+                          <span>
+                            <img src="" alt="" class="selected-flag"> اختر الدوله
+                          </span>
+                          <div class="arrow"></div>
+                        </div>
+                        <div class="custom-options">
+                          <span class="custom-option" data-value="moroco" data-name="المغرب" data-currency="MAD" data-flag="./assets/images/Flag_of_Morocco.svg.png">
+                            <img src="./assets/images/Flag_of_Morocco.svg.png" alt="moroco">المغرب 
+                          </span>
+                          <span class="custom-option" data-value="ksa" data-name="السعوديه" data-currency="SAR" data-flag="./assets/images/Flag_of_Saudi_Arabia.svg.png">
+                            <img src="./assets/images/Flag_of_Saudi_Arabia.svg.png" alt="ksa"> السعودية
+                          </span>
+                          <!-- Add more countries as needed -->
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="col-8 col-md-6 col-lg-4">
                   <div class="form-group">
                     <label for="">وزن الشحن</label>
                     <div class="input-group">
-                      <input type="text" class="form-control" placeholder="شحن جوي" aria-label="شحن جوي"
-                        aria-describedby="basic-addon2">
+                      <input type="number" class="form-control" id="kilograms" placeholder="شحن جوي" aria-label="شحن جوي" aria-describedby="basic-addon2">
                       <span class="input-group-text" id="basic-addon2">KG</span>
                     </div>
                   </div>
@@ -103,6 +118,10 @@
                   <div class="btn_submit">
                     <button class="btn" type="submit">عرض الأسعار</button>
                   </div>
+                </div>
+
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                  <div class="result"></div>
                 </div>
               </div>
             </form>
@@ -455,6 +474,42 @@
     </div>
   </div>
 
+  <div class="modal_result">
+    <div class="modal_box">
+      <div class="close">
+        <img src="./assets/images/fi-rr-cross.svg" alt="">
+      </div>
+      <h5 class="head">حساب تكلفة الشحن</h5>
+      <div class="from_top">
+        <ul class="list-unstyled d-flex align-items-center justify-content-center">
+          <li class="flag">
+            <img src="./assets/images/Flag_of_Turkey.svg.png" alt="">
+            <span>من تركيا</span>
+          </li>
+          <li class="line">
+            <img src="./assets/images/arrow.svg" alt="">
+          </li>
+          <li class="flag flag_to">
+            <img src="./assets/images/Flag_of_Morocco.svg.png" alt="">
+            <span></span>
+          </li>
+        </ul>
+        <div class="unit_weight">
+          <span>وزن الشحنة</span>
+          <span class="weightnum"></span>
+        </div>
+        <div class="total">
+          <p>التكلفة الإجمالية</p>
+          <h5 dir="ltr"><span class="cname"></span> <span class="currency"></span></h5>
+        </div>
+        <a href="">
+          <i class="fab fa-whatsapp"></i>
+          <span>اشحن الان عبر الواتساب</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
   <script src="./assets/js/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
   <script src="./assets/js/popper.min.js"></script>
@@ -463,28 +518,19 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
   <!-- for animation -->
   <script src="./assets/js/aos.js"></script>
-
   <script src="./assets/js/main.js"></script>
-
-
-
-
 
   <script>
     window.intercomSettings = {
       api_base: "https://api-iam.intercom.io",
       app_id: "g6hytwix",
-      user_id: user.id, // IMPORTANT: Replace "user.id" with the variable you use to capture the user's ID
-      name: user.name, // IMPORTANT: Replace "user.name" with the variable you use to capture the user's name
-      email: user.email, // IMPORTANT: Replace "user.email" with the variable you use to capture the user's email address
-      created_at: user.createdAt, // IMPORTANT: Replace "user.createdAt" with the variable you use to capture the user's sign-up date
     };
   </script>
-
-
+  
+  
   <script>
     // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/g6hytwix'
-    (function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', w.intercomSettings); } else { var d = document; var i = function () { i.c(arguments); }; i.q = []; i.c = function (args) { i.q.push(args); }; w.Intercom = i; var l = function () { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/g6hytwix'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }; if (document.readyState === 'complete') { l(); } else if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })();
+    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/g6hytwix';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
   </script>
 </body>
 
