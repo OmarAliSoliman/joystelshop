@@ -548,14 +548,6 @@ body.modal-open .mm-slideout {
 .about_joystel .mobile_btn {
   display: none;
 }
-.about_joystel .about_joystel_gif {
-  background-color: #e6e6e6;
-  padding: 23px;
-  border: 1px solid #e6e6e6;
-  border-radius: 10px;
-  height: 526px;
-}
-
 .shopping_section {
   margin-top: 90px;
 }
@@ -682,7 +674,7 @@ body.modal-open .mm-slideout {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 6px;
+  margin: auto;
 }
 .sites_buy .card_icon img {
   width: 80%;
@@ -954,6 +946,7 @@ body.modal-open .mm-slideout {
   .sites_buy ul {
     flex-wrap: wrap;
     padding-right: 0;
+    padding-left: 0;
   }
   .site-card {
     width: 350px;
@@ -1008,9 +1001,6 @@ body.modal-open .mm-slideout {
     height: auto;
     padding-bottom: 50px;
     background-color: #170d39;
-  }
-  .sites_buy .card_icon {
-    margin: 5px;
   }
   .modal_result .modal_box {
     padding: 29px 9px;

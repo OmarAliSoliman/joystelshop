@@ -36,6 +36,7 @@
 
   <!-- for english version please change style to ar style ./assets/css/style-ar.css -->
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
   <title>Jostyol Shop</title>
 </head>
 
@@ -93,10 +94,12 @@
                           <div class="arrow"></div>
                         </div>
                         <div class="custom-options">
-                          <span class="custom-option" data-value="moroco" data-name="المغرب" data-currency="MAD" data-flag="./assets/images/Flag_of_Morocco.svg.png">
-                            <img src="./assets/images/Flag_of_Morocco.svg.png" alt="moroco">المغرب 
+                          <span class="custom-option" data-value="moroco" data-name="المغرب" data-currency="MAD"
+                            data-flag="./assets/images/Flag_of_Morocco.svg.png">
+                            <img src="./assets/images/Flag_of_Morocco.svg.png" alt="moroco">المغرب
                           </span>
-                          <span class="custom-option" data-value="ksa" data-name="السعوديه" data-currency="SAR" data-flag="./assets/images/Flag_of_Saudi_Arabia.svg.png">
+                          <span class="custom-option" data-value="ksa" data-name="السعوديه" data-currency="SAR"
+                            data-flag="./assets/images/Flag_of_Saudi_Arabia.svg.png">
                             <img src="./assets/images/Flag_of_Saudi_Arabia.svg.png" alt="ksa"> السعودية
                           </span>
                           <!-- Add more countries as needed -->
@@ -109,7 +112,8 @@
                   <div class="form-group">
                     <label for="">وزن الشحن</label>
                     <div class="input-group">
-                      <input type="number" class="form-control" id="kilograms" placeholder="شحن جوي" aria-label="شحن جوي" aria-describedby="basic-addon2">
+                      <input type="number" class="form-control" id="kilograms" placeholder="شحن جوي"
+                        aria-label="شحن جوي" aria-describedby="basic-addon2">
                       <span class="input-group-text" id="basic-addon2">KG</span>
                     </div>
                   </div>
@@ -130,9 +134,6 @@
       </div>
     </div>
   </div>
-
-
-
 
   <div class="about_joystel">
     <div class="container">
@@ -155,8 +156,17 @@
         </div>
         <div class="col-sm-12 col-md-12 col-lg-1"></div>
         <div class="col-sm-12 col-md-12 col-lg-6">
-          <div class="about_joystel_gif" data-aos="fade-up">
-            GIF
+          <div class="about_joystel_gif" id="animation-container" data-aos="fade-up">
+            <script>
+              var animation = bodymovin.loadAnimation({
+                container: document.getElementById('animation-container'),
+                path: 'animation.json',
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                name: "Demo Animation",
+              }); 
+            </script>
           </div>
 
           <a href="https://wa.me/+15556003899" data-aos="fade-up" target="_blank" class="mobile_btn">
@@ -307,31 +317,38 @@
         <h6>أبرز مواقع التسوق التركية</h6>
         <h5 class="col-lg-3 mx-auto">نقوم بالشراء لكم من جميع المواقع التركية</h5>
       </div>
-      <ul class="d-flex align-items-center justify-content-center mt-5 list-unstyled">
+      <ul
+        class="col-12 col-lg-6 col-xl-7 mx-auto d-flex align-items-center justify-content-center mt-5 list-unstyled site_buy_slider"
+        dir="ltr">
         <li data-aos="fade-up" data-aos-duration="200">
-          <div class="card_icon">
+          <a href="#" target="_blank" class="card_icon">
             <img src="./assets/images/logo1.svg" alt="">
-          </div>
+          </a>
         </li>
         <li data-aos="fade-up" data-aos-duration="300">
-          <div class="card_icon">
+          <a href="#" target="_blank" class="card_icon">
             <img src="./assets/images/logo2.svg" alt="">
-          </div>
+          </a>
         </li>
         <li data-aos="fade-up" data-aos-duration="400">
-          <div class="card_icon">
+          <a href="#" target="_blank" class="card_icon">
             <img src="./assets/images/logo3.svg" alt="">
-          </div>
+          </a>
         </li>
         <li data-aos="fade-up" data-aos-duration="500">
-          <div class="card_icon">
+          <a href="#" target="_blank" class="card_icon">
             <img src="./assets/images/logo4.svg" alt="">
-          </div>
+          </a>
         </li>
         <li data-aos="fade-up" data-aos-duration="600">
-          <div class="card_icon">
+          <a href="#" target="_blank" class="card_icon">
             <img src="./assets/images/logo5.svg" alt="">
-          </div>
+          </a>
+        </li>
+        <li data-aos="fade-up" data-aos-duration="600">
+          <a href="#" target="_blank" class="card_icon">
+            <img src="./assets/images/logo5.svg" alt="">
+          </a>
         </li>
       </ul>
     </div>
@@ -515,6 +532,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.5/waypoints.min.js"></script>
   <!-- for animation -->
+  <script src="./assets/js/slick.js"></script>
   <script src="./assets/js/aos.js"></script>
   <script src="./assets/js/main.js"></script>
 
@@ -524,11 +542,11 @@
       app_id: "g6hytwix",
     };
   </script>
-  
-  
+
+
   <script>
     // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/g6hytwix'
-    (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/g6hytwix';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+    (function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', w.intercomSettings); } else { var d = document; var i = function () { i.c(arguments); }; i.q = []; i.c = function (args) { i.q.push(args); }; w.Intercom = i; var l = function () { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/g6hytwix'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }; if (document.readyState === 'complete') { l(); } else if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })();
   </script>
 </body>
 

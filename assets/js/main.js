@@ -1,43 +1,64 @@
 // var layeranimation = gsap.timeline();
 $(document).ready(function () {
+
+
+
+  if($(".site_buy_slider").length){
+    $(".site_buy_slider").slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: false,
+      speed: 200,
+      infinite: true,
+      css: "linear",
+      loop: true,
+      autoplaySpeed: 5000,
+      centerMode: false,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 1920,
+          settings: {
+            slidesToShow: 5,
+            // centerMode: false,
+          },
+        },
+        {
+          breakpoint: 1150,
+          settings: {
+            slidesToShow: 4,
+            // centerMode: false,
+          },
+        },
+        {
+          breakpoint: 1100,
+          settings: {
+            slidesToShow: 3,
+            // centerMode: false,
+          },
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            // centerMode: false,
+          },
+        },
+
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            // centerMode: false,
+          },
+        },
+      ],
+    });
+  }
+
+
   var currentDir = $("body").css("direction");
-
-  // if ($("#scene").length) {
-  //   var scene = document.getElementById("scene");
-  //   var parallaxInstance = new Parallax(scene);
-  // }
-
-  // if ($(".advanges_program_card").length) {
-  //   $(".advanges_program_card span.num").counterUp();
-  // }
-
-  // if ($(".landing_header_img").length) {
-  //   var vector1 = $(".landing_header_img .vector_1"),
-  //     vector2 = $(".landing_header_img .vector_2"),
-  //     vector3 = $(".landing_header_img .vector_3");
-
-  //   console.log(vector1, vector2, vector3);
-
-  //   layeranimation
-  //     .to(vector1, { left: "-60px", duration: 1, ease: "linear" })
-  //     .to(
-  //       vector2,
-  //       { right: "-30px", top: "-80px", duration: 1, ease: "linear" },
-  //       "0"
-  //     )
-  //     .to(
-  //       vector3,
-  //       {
-  //         right: "70px",
-  //         bottom: "30px",
-  //         duration: 1,
-  //         zIndex: 3,
-  //         ease: "linear",
-  //       },
-  //       "0"
-  //     );
-  //   layeranimation.pause();
-  // }
   var selectedCountry = "";
   var selectedKilo = "";
   var kiloresult = "";
