@@ -1056,7 +1056,7 @@ body.modal-open .mm-slideout {
   }
   .custom_header {
     height: max-content !important;
-    min-height: 95vh !important;
+    min-height: 85vh !important;
   }
   .custom_header .header_box {
     padding: 30px 18px;
@@ -1105,9 +1105,13 @@ body.modal-open .mm-slideout {
   }
 }
 
-@media(max-width: 320px){
+@media(max-width: 400px){
   .custom_header .header_content h5{
     font-size: 3.2rem;
+  }
+  .custom_header {
+    height: max-content !important;
+    min-height: 95vh !important;
   }
 }
 
