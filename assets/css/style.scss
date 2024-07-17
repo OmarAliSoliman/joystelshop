@@ -567,7 +567,8 @@ body.modal-open .mm-slideout {
       font-family: $semiboldFont;
       font-size: 1.9rem;
     }
-    p {
+    p,
+    li {
       color: #2f2d34;
       text-align: right;
       font-family: $mediumdFont;
@@ -915,7 +916,7 @@ body.modal-open .mm-slideout {
         span {
           color: $secondColor;
         }
-        .currency{
+        .currency {
           color: #000;
         }
       }
@@ -938,10 +939,10 @@ body.modal-open .mm-slideout {
   }
 }
 
-.active_modal{
+.active_modal {
   opacity: 1;
   visibility: visible;
-  .modal_box{
+  .modal_box {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -1055,11 +1056,11 @@ body.modal-open .mm-slideout {
   }
   .custom_header {
     height: max-content !important;
-    min-height: 100vh !important;
+    min-height: 95vh !important;
   }
   .custom_header .header_box {
     padding: 30px 18px;
-    margin-top: 100px;
+    margin-top: 60px;
   }
   .custom_header .header_box .form-group {
     margin-bottom: 25px;
@@ -1071,7 +1072,7 @@ body.modal-open .mm-slideout {
     margin-top: 0;
   }
   .custom_header .header_content {
-    margin-top: 80px;
+    // margin-top: 80px;
   }
   .custom_navbar_header {
     height: auto;
@@ -1083,6 +1084,30 @@ body.modal-open .mm-slideout {
   }
   .modal_result .modal_box {
     padding: 29px 9px;
+  }
+  .shopping_section,
+  .eshtryly_service,
+  .site_footer {
+    margin-top: 60px;
+  }
+  .eshtryly_service {
+    margin-bottom: 60px;
+  }
+  .important-site .secton-header {
+    margin-bottom: 50px;
+  }
+  .eshtryly_service .eshtryly_service_content h6,
+  .sites_buy .section_header h6,
+  .important-site .secton-header h6,
+  .shopping_section .mobile_head h6,
+  .about_joystel .about_joystel_content h6 {
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 320px){
+  .custom_header .header_content h5{
+    font-size: 3.2rem;
   }
 }
 
